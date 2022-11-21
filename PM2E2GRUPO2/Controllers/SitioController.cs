@@ -11,7 +11,7 @@ namespace PM2E2GRUPO2.Controllers
     public class SitioController
     {
         private static readonly string URL_SITIOS = "https://prograweb2-2021.000webhostapp.com/Examen2/";
-       // private static readonly string URL_SITIOS = "https://pm2examen2.000webhostapp.com/apiexamen/"; 
+       
         private static HttpClient client = new HttpClient();
 
         public static async Task<List<Sitio>> GetAllSite()
