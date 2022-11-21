@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="PM2E2GRUPO2.Views.Mapa">
+    <StackLayout Orientation="Vertical" Spacing="0">
+        <StackLayout Orientation="Horizontal">
+            <Button HorizontalOptions="FillAndExpand" Margin="5,5,0,5" Text="Volver" x:Name="btnvolver" Clicked="btnvolver_Clicked"
+                BackgroundColor="#86b7f3"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Caption"
+                        HeightRequest="40"></Button>
+
+            <Button HorizontalOptions="FillAndExpand" Margin="0,5,5,5" Text="Mode Driving" x:Name="btndriving" Clicked="btndriving_Clicked"
+                BackgroundColor="#86b7f3"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Caption"
+                        HeightRequest="40"></Button>
+        </StackLayout>
+        <maps:Map x:Name="mapa"></maps:Map>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E2GRUPO2.Views.ModificarUbicacion"
+             
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms">
+    <ScrollView>
+
+        <StackLayout Margin="15,15,15,15">
+            <StackLayout BackgroundColor="Black" HorizontalOptions="Center" Padding="1">
+                <Label Text="Fotografía" TextColor="#FFFFFF" FontAttributes="Bold"/>
+                <Frame BackgroundColor="#FFFFFF" Padding="5">
+                    <Image x:Name="imgpersona" HeightRequest="200" WidthRequest="200"/>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="imgpersona_Tapped"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="25,25,25,0">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Latitud:"></Label>
+                    <Entry x:Name="latitud" IsReadOnly="True"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Longitud:"></Label>
+                    <Entry x:Name="longitud" IsReadOnly="True"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Describa la ubicación:"
+                               FontAttributes="Bold"></Label>
+                        <ImageButton x:Name="cleandescripcion" Clicked="cleandescripcion_Clicked" Source="delete.png" HeightRequest="20"
+                                     Margin="125,0,0,0"
+                                     BackgroundColor="Transparent"></ImageButton>
+                    </StackLayout>
+                    <Editor x:Name="descripcion" HeightRequest="100"></Editor>
+                </StackLayout>
+            </StackLayout>
+
+            
+
+            <StackLayout Margin="50,50,50,50">
+                <Button x:Name="btnactualizar" Clicked="btnactualizar_Clicked" Text="Actualizar"
+                        BackgroundColor="#86b7f3"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Caption"
+                        HeightRequest="40"
+                        CornerRadius="40"/>
+
+                <Button x:Name="btneliminar" Clicked="btneliminar_Clicked" Text="Eliminar"
+                        BackgroundColor="#86b7f3"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Caption"
+                        HeightRequest="40"
+                        CornerRadius="40"/>
+
+            </StackLayout>
+
+
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>

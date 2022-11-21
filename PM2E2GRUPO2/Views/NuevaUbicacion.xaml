@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PM2E2GRUPO2.Views.NuevaUbicacion"
+             
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms">
+    <ScrollView>
+
+        <StackLayout Margin="15,15,15,15">
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0">
+                <Frame Padding="0">
+                    <Label Text="Nueva Ubicación"
+                       HorizontalOptions="CenterAndExpand"
+                       BackgroundColor="#86b7f3"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       Padding="10"/>
+                </Frame>
+
+                <Frame Padding="0">
+                    <Label Text="Ubicaciones Salvadas"
+                       
+                       HorizontalOptions="CenterAndExpand"
+                       BackgroundColor="White"
+                       TextColor="#86b7f3"
+                       FontAttributes="Bold"
+                       Padding="10"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="btnubicaciones_Clicked"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+
+            <Image Source="uthlogo.png" WidthRequest="150" Margin="0,25,0,0"/>
+
+            <StackLayout BackgroundColor="Black" HorizontalOptions="Center" Padding="1">
+                <Label Text="Fotografía" TextColor="#FFFFFF" FontAttributes="Bold"/>
+                <Frame BackgroundColor="#FFFFFF" Padding="5">
+                    <Image x:Name="imgpersona" HeightRequest="200" WidthRequest="200"/>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="imgpersona_Tapped"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="25,25,25,0">
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Latitud actual:"></Label>
+                    <Entry x:Name="latitud" IsReadOnly="True"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Longitud actual:"></Label>
+                    <Entry x:Name="longitud" IsReadOnly="True"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Describa la ubicación:"
+                               FontAttributes="Bold"></Label>
+                        <ImageButton x:Name="cleandescripcion" Clicked="cleandescripcion_Clicked" Source="delete.png" HeightRequest="20"
+                                     Margin="125,0,0,0"
+                                     BackgroundColor="Transparent"></ImageButton>
+                    </StackLayout>
+                    <Editor x:Name="descripcion" HeightRequest="100"></Editor>
+                </StackLayout>
+            </StackLayout>
+
+            <!--Grabar Nota de Voz-->
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="51,50,25,0">
+                <Label Text="Grabar Nota de Voz" HorizontalOptions="Start"/>
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,15,0" Padding="0,0,10,0" Spacing="0">
+                    <Frame CornerRadius="10"  
+                           OutlineColor="Red" 
+                           Padding="0"
+                           HasShadow="False">
+                        <StackLayout BackgroundColor="#86b7f3" Padding="10,0,10,0" Orientation="Horizontal" Spacing="0">
+                            <Image x:Name="onda1" IsVisible="False" Source="grabando1.gif"
+                           WidthRequest="100"
+                           IsAnimationPlaying="True"/>
+                            <Image x:Name="onda2" IsVisible="False" Source="grabando1.gif"
+                           WidthRequest="100"
+                           IsAnimationPlaying="True"/>
+                            <Label x:Name="ondaespacio"
+                                   Text=""
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   FontSize="Caption"
+                                   WidthRequest="200" IsVisible="True" Padding="25,0,25,0"/>
+                        </StackLayout>
+                    </Frame>
+                    <Image x:Name="imgmicro" Source="voiceoff.png" WidthRequest="50" Margin="10,0,0,0"></Image>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="grabarvoz" Clicked="grabarvoz_Clicked" Text="Grabar Voz"
+                        BackgroundColor="#86b7f3"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Caption"
+                        HeightRequest="40"
+                        CornerRadius="40"/>
+
+                    <Button IsVisible="False" x:Name="detenervoz" Clicked="detenervoz_Clicked" Text="Detener"
+                        BackgroundColor="#86b7f3"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Caption"
+                        HeightRequest="40"
+                        CornerRadius="40"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Margin="50,50,50,50">
+                <Button x:Name="btnsalvar" Clicked="btnsalvar_Clicked" Text="Salvar Ubicación"
+                        BackgroundColor="#86b7f3"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Caption"
+                        HeightRequest="40"
+                        CornerRadius="40"/>
+                
+                <Button IsVisible="False" x:Name="btnubicaciones" Clicked="btnubicaciones_Clicked" Text="Ubicaciones Salvadas"
+                        BackgroundColor="#86b7f3"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Caption"
+                        HeightRequest="40"
+                        CornerRadius="40"/>
+                
+            </StackLayout>
+            
+            
+        </StackLayout>
+        
+    </ScrollView>
+</ContentPage>
